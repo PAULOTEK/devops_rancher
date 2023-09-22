@@ -425,7 +425,7 @@ Nesse exercício do liveness, iremos testar como fazer para dizer ao kubernetes,
 ```js
 http.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) { 
 	duration := time.Now().Sub(started) 
-	if duration.Seconds() > 10 { 
+	if (duration.Seconds() > 10) { 
 		w.WriteHeader(500) 
 		w.Write([]byte(fmt.Sprintf("error: %v", duration.Seconds()))) 
 	} else { 
